@@ -2,9 +2,16 @@ import React, { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {faBars, faTimes,} from "@fortawesome/free-solid-svg-icons"
 import CustomLink from "../CustomLink/CustomLink";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../Firebase/firebase.init";
+import { signOut } from "firebase/auth";
 
 function Header() {
-  const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState(false);
+    const [user] = useAuthState(auth);
+    const handleSignOut = () => {
+        signOut(auth);
+    }
   return (
     <div className="flex items-center h-14 px-6 justify-between  bg-slate-600 text-white relative z-50">
       <div className="h-7">westen Photography</div>
@@ -13,7 +20,10 @@ function Header() {
             <CustomLink to='/cart'>Cart</CustomLink>
             <CustomLink to='/blogs'>Blogs</CustomLink>
             <CustomLink to='/about'>About Me</CustomLink>
-            <CustomLink to='/login'>Login</CustomLink>
+              {user ? <button onClick={handleSignOut}>Sign Out</button>
+                  :
+                  <CustomLink to='/login'>Login</CustomLink>
+              }
       </div>
       <FontAwesomeIcon
         icon={open ? faTimes : faBars}
