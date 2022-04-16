@@ -5,6 +5,7 @@ import CustomLink from "../CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../Firebase/firebase.init";
 import { signOut } from "firebase/auth";
+import { Link } from "react-router-dom";
 
 function Header() {
     const [open, setOpen] = useState(false);
@@ -14,16 +15,16 @@ function Header() {
     }
   return (
     <div className="flex items-center h-14 px-6 justify-between  bg-slate-600 text-white relative z-50">
-      <div className="h-7">westen Photography</div>
+      <div className="h-7"><Link to='/home'>Westen Photography</Link></div>
       <div className="flex gap-4 ml-10 items-center hidden md:flex">
             <CustomLink to='/services'>Services</CustomLink>
             <CustomLink to='/cart'>Cart</CustomLink>
             <CustomLink to='/blogs'>Blogs</CustomLink>
             <CustomLink to='/about'>About Me</CustomLink>
-              {user ? <button onClick={handleSignOut}>Sign Out</button>
-                  :
-                  <CustomLink to='/login'>Login</CustomLink>
-              }
+            {user ? <button onClick={handleSignOut}>Sign Out</button>
+                :
+                <CustomLink to='/login'>Login</CustomLink>
+            }
       </div>
       <FontAwesomeIcon
         icon={open ? faTimes : faBars}
@@ -37,7 +38,10 @@ function Header() {
                 <CustomLink to='/cart'>Cart</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
                 <CustomLink to='/about'>About Me</CustomLink>
-                <CustomLink to='/login'>Login</CustomLink>
+                {user ? <button onClick={handleSignOut}>Sign Out</button>
+                    :
+                    <CustomLink to='/login'>Login</CustomLink>
+                }
             </div>
         </div>
       )}
