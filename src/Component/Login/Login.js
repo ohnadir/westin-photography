@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/firebase.init';
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
-    const navigate = useNavigate();
     const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     const handleEmail = event => {
         setEmail(event.target.value);
     }
@@ -15,7 +17,7 @@ const Login = () => {
         setPassword(event.target.value);
     }
     if (user) {
-        navigate('/home')
+        navigate(from, { replace: true });
     }
     const handleLogIn = () => {
         signInWithEmailAndPassword(email, password);
