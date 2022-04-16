@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/firebase.init';
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
     const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -19,8 +21,14 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    if (user1) {
+        navigate(from, { replace: true });
+    }
     const handleLogIn = () => {
         signInWithEmailAndPassword(email, password);
+    }
+    const handleGoogleSingIn = () => {
+        signInWithGoogle();
     }
     return (
         <div className='flex justify-center items-center h-[93vh]'>
@@ -38,7 +46,7 @@ const Login = () => {
                         <p>Create an Account <Link className='text-red-600' to='/signup'>Signup</Link></p>
                         <span><Link className='text-red-600' to='/forgot'>Forgot Password ?</Link></span>
                     </div>
-                    <button className='
+                    <button onClick={handleGoogleSingIn} className='
                     border border-cyan-600  w-full px-8 py-[5px]
                      text-black rounded
                      flex items-center justify-center

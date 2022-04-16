@@ -2,9 +2,13 @@ import React from 'react';
 import Rating from 'react-rating';
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-const Service = (props) => {
-    const { img, name, details, Price, ratings, id } = props.service;
-    const { handleAddToCart } = props;
+import { useNavigate } from 'react-router-dom';
+const Service = ({service}) => {
+    const { img, name, details, Price, ratings} = service;
+    const navigate = useNavigate();
+    const handleGoToCheckOut = () => {
+        navigate('/checkout');
+    }
     return (
         <div>
             <div className='shadow-xl mx-auto font-sans h-[410px] relative'>
@@ -14,7 +18,7 @@ const Service = (props) => {
                     <p className='text-gray-600 mb-3'>{details}</p>
                     <p className='mb-1'>Price:- <span className='font-semibold'>${Price}</span></p>
                     <p className='mb-2'>Ratings:- 
-                    <Rating
+                    <Rating className='text-sm'
                         initialRating={ratings}
                         emptySymbol={<FontAwesomeIcon icon={faStar} />}
                         fullSymbol={<FontAwesomeIcon style={{color: 'goldenrod'}} icon={faStar} />}
@@ -22,9 +26,9 @@ const Service = (props) => {
                     </Rating>
                     </p>
                 </div>
-                <button onClick={()=> handleAddToCart(id)} className=' absolute bottom-0
+                <button onClick={handleGoToCheckOut} className=' absolute bottom-0
                 bg-cyan-600 w-full py-[4px] hover:bg-cyan-500
-                text-white ' >Add To Cart</button>
+                text-white ' >Checkout</button>
             </div>
         </div>
     );

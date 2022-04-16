@@ -29,12 +29,7 @@ const Blogs = () => {
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body py-4 px-5">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                            অথেন্টিকেশন পদ্ধতি  অনুমোদিত ব্যবহারকারীদের একটি ডাটাবেসে বা একটি ডেটা  সার্ভারে সংরক্ষিত ব্যবহারকারীর তথ্যগুলি্র  সাথে  প্রেরন কারীর তথ্য মেলে কিনা তা পরীক্ষা করে সিস্টেমগুলির জন্য অ্যাক্সেস নিয়ন্ত্রণ সরবরাহ করে ৷ কাউকে কোন কাজ করার জন্য বা কোন রিসোর্স ব্যবহার করার পারমিশন দেয়ার প্রক্রিয়াকে অথোরাইজেশন বলে । অথেন্টিকেশন ব্যবহারকারী কে তা যাচাই করে। অথোরাইজেশন নির্ধারণ করে কোন ব্যবহারকারী কোন রিসোর্স অ্যাক্সেস করতে পারে। অথেন্টিকেশন একটি ভাল পরিচয় এবং অ্যাক্সেস ব্যবস্থাপনা প্রক্রিয়ার প্রথম ধাপ। অথোরাইজেশন অনুমোদন সর্বদা অথেন্টিকেশন পরে সঞ্চালিত হয়।
                         </div>
                         </div>
                     </div>

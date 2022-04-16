@@ -15,12 +15,12 @@ function Header() {
     }
   return (
     <div className="flex items-center h-14 px-6 justify-between  bg-slate-600 text-white relative z-50">
-      <div className="h-7"><Link to='/home'>Westen Photography</Link></div>
+      <div className="h-7"><Link to='/home'>WesTen Photography</Link></div>
       <div className="flex gap-4 ml-10 items-center hidden md:flex">
             <CustomLink to='/services'>Services</CustomLink>
-            <CustomLink to='/cart'>Cart</CustomLink>
+            <CustomLink to='/checkout'>Checkout</CustomLink>
             <CustomLink to='/blogs'>Blogs</CustomLink>
-            <CustomLink to='/about'>About Me</CustomLink>
+            <CustomLink to='/about'>About</CustomLink>
             {user ? <button onClick={handleSignOut}>Sign Out</button>
                 :
                 <CustomLink to='/login'>Login</CustomLink>
@@ -35,9 +35,9 @@ function Header() {
         <div className="bg-slate-600 absolute top-full left-0 flex flex-col w-full pb-8 md:hidden">
             <div className=" flex gap-4 flex-col items-center text-xl">
                 <CustomLink to='/services'>Service</CustomLink>
-                <CustomLink to='/cart'>Cart</CustomLink>
+                <CustomLink to='/checkout'>Checkout</CustomLink>
                 <CustomLink to='/blogs'>Blogs</CustomLink>
-                <CustomLink to='/about'>About Me</CustomLink>
+                <CustomLink to='/about'>About</CustomLink>
                 {user ? <button onClick={handleSignOut}>Sign Out</button>
                     :
                     <CustomLink to='/login'>Login</CustomLink>
