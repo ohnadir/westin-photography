@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { sendPasswordResetEmail} from 'firebase/auth';
 import auth from '../Firebase/firebase.init';
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
     const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -30,6 +32,13 @@ const Login = () => {
     const handleGoogleSingIn = () => {
         signInWithGoogle();
     }
+    const handleForgotPassword = () => {
+        sendPasswordResetEmail(auth, email)
+        .then(() => {
+            console.log("Password reset");
+        })
+        alert('Update Password');
+    }
     return (
         <div className='flex justify-center items-center h-[93vh]'>
             <div className='w-[500px] shadow-xl p-4'>
@@ -44,7 +53,8 @@ const Login = () => {
                     <button onClick={handleLogIn} className='bg-cyan-600 w-full text-white py-[5px] rounded'>Log in</button>
                     <div className='flex items-center justify-between my-8'>
                         <p>Create an Account <Link className='text-red-600' to='/signup'>Signup</Link></p>
-                        <span><Link className='text-red-600' to='/forgot'>Forgot Password ?</Link></span>
+                        <button onClick={handleForgotPassword} className='text-red-600'>Forgot password</button>
+                        {/* <span><Link className='text-red-600' to='/forgot'>Forgot Password ?</Link></span> */}
                     </div>
                     <button onClick={handleGoogleSingIn} className='
                     border border-cyan-600  w-full px-8 py-[5px]
