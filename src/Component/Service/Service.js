@@ -4,10 +4,10 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from 'react-router-dom';
 const Service = ({service}) => {
-    const { img, name, details, Price, ratings} = service;
+    const { img, name, details, Price, ratings, id} = service;
     const navigate = useNavigate();
     const handleGoToCheckOut = () => {
-        navigate('/checkout');
+        navigate(`/checkout/${id}`);
     }
     return (
         <div>
@@ -26,7 +26,7 @@ const Service = ({service}) => {
                     </Rating>
                     </p>
                 </div>
-                <button onClick={handleGoToCheckOut} className=' absolute bottom-0
+                <button onClick={()=>handleGoToCheckOut(id)} className=' absolute bottom-0
                 bg-cyan-600 w-full py-[4px] hover:bg-cyan-500
                 text-white ' >Checkout</button>
             </div>

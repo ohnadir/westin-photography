@@ -58,12 +58,9 @@ const Blogs = () => {
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body py-4 px-5">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                                ফায়ার বেইজ একটি গুগলের দ্বারা পরিচালিত হওয়া একটি প্ল্যাটর্ফম যার মাধ্যমে আমরা সহজেই ওয়েব সাইট হোস্টিং, ক্লাউড স্টোরেজ, ক্লাউড মেসেজিং ইত্যাদি করতে পারি । ফায়ার বেইজ দিয়ে ওয়েব সাইট ইম্পিমেন্ট করার ফলে ব্যবহারকারীরা তাদের ইনফরমেশন এবং ইউজার ইন্টারফেইস গ্রহন করে থাকে । ফায়ার বেইজের অথেন্টিকেশন ছাড়া Duo হল একটি ব্যাপক ইউজার অথেন্টিকেশন এবং অ্যাক্সেস ম্যানেজমেন্ট প্ল্যাটফর্ম। এটি ইউজার দের অথেন্টিকেশন জন্য  সার্ভার এবং অ্যাপ্লিকেশনগুলিতে নিরাপদ অ্যাক্সেস প্রদান করে । Duo মাল্টি-ফ্যাক্টর অথেন্টিকেশন, একক সাইন-অন, কনফিগারযোগ্য অভিযোজিত অ্যাক্সেস নীতি এবং ডিভাইস নির্ভর কার্যকারিতা প্রদান করে।
+                                
+                                
                         </div>
                         </div>
                     </div>
@@ -92,12 +89,7 @@ const Blogs = () => {
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body py-4 px-5">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default,
-                            until the collapse plugin adds the appropriate classes that we use to style each
-                            element. These classes control the overall appearance, as well as the showing and
-                            hiding via CSS transitions. You can modify any of this with custom CSS or overriding
-                            our default variables. It's also worth noting that just about any HTML can go within
-                            the <code>.accordion-body</code>, though the transition does limit overflow.
+                        ফায়ার বেইজ একটি গুগল সমর্থিত ক্লোজড সোর্স প্ল্যাটর্ফম যেখানে অনেকগুলি চমৎকার ফিচার রয়েছে যা ডেভেলপার দের দ্রুত একটি MVP তৈরি করতে দেয় ৷ ফায়ার বেইজ ওয়েব সাইট সাক্সেস ফুল ভাবে বিল্ড রান করতে সাহায্য করে ।  ফায়ার বেইজ অথেন্টিকেশন ছাড়া অনেক গুলি সার্ভিস প্রদান করেন তার মদ্ধে অন্যতম হলো রিয়েল টাইম ডাটাবেস । অন্য দিকে ফায়ার বেইজ হোস্টিং ও প্রভাইড করে যার ফলে ডেভেলপার রা সহজে ব্যবহার করতে পারে । ক্লাউড মেসেজিং ও ফায়ার বেইজ দ্বারা খুব সহজেই করা সম্ভব । তাছারা অনেক গুলা ফিচার রয়েছে ্ যেই গুলা ফায়ার বেইজ দিয়ে করা যায় যেমনঃ- রিমোট কনফিগ, ফায়ার বেইজ ML , ক্লাউড ফাংশন, ক্লাউড স্টোরেজ ।
                         </div>
                         </div>
                     </div>

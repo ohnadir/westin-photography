@@ -8,7 +8,6 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 // import { useSendEmailVerification } from 'react-firebase-hooks/auth';
 import { sendEmailVerification  } from "firebase/auth";
-import Loading from '../Loading';
 
 const Signup = () => {
     const [agree, setAgree] = useState(false);
@@ -32,10 +31,6 @@ const Signup = () => {
         setConfirmPassword(event.target.value);
     }
 
-   /*  if (sending) {
-        return <Loading></Loading>;
-      } */
-
     if (user) {
         navigate('/home')
     }
@@ -46,7 +41,6 @@ const Signup = () => {
             createUserWithEmailAndPassword(email, password);
             sendEmailVerification(auth.currentUser)
             .then(() => {});
-            
         }
         toast('Email Verification Send');
     }
