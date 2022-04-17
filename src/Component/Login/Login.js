@@ -31,6 +31,7 @@ const Login = () => {
     }
     const handleGoogleSingIn = () => {
         signInWithGoogle();
+        
     }
     const handleForgotPassword = () => {
         sendPasswordResetEmail(auth, email)
