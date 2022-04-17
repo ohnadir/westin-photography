@@ -10,7 +10,6 @@ import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
     const [signInWithEmailAndPassword, user] = useSignInWithEmailAndPassword(auth);
     const [signInWithGoogle, user1] = useSignInWithGoogle(auth);
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();

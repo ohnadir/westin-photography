@@ -1,34 +1,41 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../Firebase/firebase.init';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+// import { useSendEmailVerification } from 'react-firebase-hooks/auth';
+import { sendEmailVerification  } from "firebase/auth";
+import Loading from '../Loading';
+
 const Signup = () => {
     const [agree, setAgree] = useState(false);
-    const navigate = useNavigate()
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+    const navigate = useNavigate();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
+    // const [sendEmailVerification, sending] = useSendEmailVerification(auth);
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [passwordError, setPasswordError] = useState('');
     const [error, setError] = useState('');
     const handleEmail = event => {
         setEmail(event.target.value);
     }
+
     const handlePassword = event => {
         setPassword(event.target.value);
-        if (password < 7) {
-            setPasswordError('Password must be 7 Character');
-        }else if (password > 7 ) {
-            setPasswordError('');
-        }
     }
+
     const handleConfirmPassword = event => {
         setConfirmPassword(event.target.value);
-            
     }
+
+   /*  if (sending) {
+        return <Loading></Loading>;
+      } */
+
     if (user) {
         navigate('/home')
     }
@@ -37,11 +44,17 @@ const Signup = () => {
             setError('Password Mismatch');
         } else {
             createUserWithEmailAndPassword(email, password);
+            sendEmailVerification(auth.currentUser)
+            .then(() => {});
+            
         }
+        toast('Email Verification Send');
     }
+    
     const handleGoogleSingIn = () => {
         signInWithGoogle();
     }
+
     return (
         <div className='flex justify-center items-center h-[78.5vh]'>
             <div className='w-[500px] shadow-xl p-4'>
@@ -52,7 +65,6 @@ const Signup = () => {
                     </div>
                     <div className='mb-8'>
                         <input required onChange={handlePassword} type="password" className='bg-stone-200 p-[5px] w-full outline-none' name="password" placeholder='Password' id="" />
-                        {passwordError && <p className='text-red-600 text-sm mt-1'>{passwordError}</p>}
                     </div>
                     <div className='mb-8'>
                         <input required onChange={handleConfirmPassword} className='bg-stone-200 p-[5px] w-full outline-none' type="password" name="password" placeholder='Confirm Password' id="" />
@@ -77,6 +89,7 @@ const Signup = () => {
                             justify-between'>
                         <FcGoogle className='text-3xl' /> Continue with Google</button>
                 </form>
+                <ToastContainer/>
             </div>
         </div>
     );
