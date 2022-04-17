@@ -12,24 +12,32 @@ const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
     const [error, setError] = useState('');
     const handleEmail = event => {
         setEmail(event.target.value);
     }
     const handlePassword = event => {
         setPassword(event.target.value);
+        if (password < 7) {
+            setPasswordError('Password must be 7 Character');
+        }else if (password > 7 ) {
+            setPasswordError('');
+        }
     }
     const handleConfirmPassword = event => {
         setConfirmPassword(event.target.value);
-        if (confirmPassword !== password) {
-            setError('Password Mismatch');
-        }
+            
     }
     if (user) {
         navigate('/home')
     }
     const handleSignUp = () => {
-        createUserWithEmailAndPassword(email, password);
+        if (confirmPassword !== password) {
+            setError('Password Mismatch');
+        } else {
+            createUserWithEmailAndPassword(email, password);
+        }
     }
     const handleGoogleSingIn = () => {
         signInWithGoogle();
@@ -44,10 +52,11 @@ const Signup = () => {
                     </div>
                     <div className='mb-8'>
                         <input required onChange={handlePassword} type="password" className='bg-stone-200 p-[5px] w-full outline-none' name="password" placeholder='Password' id="" />
+                        {passwordError && <p className='text-red-600 text-sm mt-1'>{passwordError}</p>}
                     </div>
                     <div className='mb-8'>
                         <input required onChange={handleConfirmPassword} className='bg-stone-200 p-[5px] w-full outline-none' type="password" name="password" placeholder='Confirm Password' id="" />
-                        {error && <p>{error}</p>}
+                        {error && <p className='text-red-600 text-sm mt-1'>{error}</p>}
                     </div>
                     <div className='mb-2'>
                         <input onClick={()=>setAgree(!agree)} type="checkbox" name="terms" id="" />

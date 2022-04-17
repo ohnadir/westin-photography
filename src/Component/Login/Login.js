@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -38,7 +40,7 @@ const Login = () => {
         .then(() => {
             console.log("Password reset");
         })
-        alert('Update Password');
+        toast('Update Password');
     }
     return (
         <div className='flex justify-center items-center h-[78.5vh]'>
@@ -63,6 +65,7 @@ const Login = () => {
                      flex items-center justify-center
                       justify-between'><FcGoogle className='text-3xl' /> Continue with Google</button>
                 </form>
+                <ToastContainer/>
             </div>
         </div>
     );

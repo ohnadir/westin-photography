@@ -2,8 +2,8 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='container mx-auto  '>
-            <div className='flex justify-center items-center h-[78.5vh]'>
+        <div className='container mx-auto'>
+            <div className='flex justify-center items-center h-[78.5vh] '>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item bg-white border border-gray-200">
                         <h2 class="accordion-header mb-0" id="headingOne">
