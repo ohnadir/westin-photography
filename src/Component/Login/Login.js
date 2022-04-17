@@ -24,11 +24,15 @@ const Login = () => {
     if (user) {
         navigate(from, { replace: true });
     }
+    
     if (user1) {
         navigate(from, { replace: true });
     }
     const handleLogIn = () => {
         signInWithEmailAndPassword(email, password);
+        if (!user) {
+            alert('User not Found');
+        }
     }
     const handleGoogleSingIn = () => {
         signInWithGoogle();
@@ -36,6 +40,7 @@ const Login = () => {
     }
     const handleForgotPassword = () => {
         sendPasswordResetEmail(auth, email)
+            
         .then(() => {
             console.log("Password reset");
         })

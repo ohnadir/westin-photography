@@ -3,13 +3,14 @@
 This project was bootstrapped with [Photography](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
+* Click on the web site title to see Home page 
 * A simple website for photographer. 
 * Home section contains a carousel, Some services, Recent work and footer
 * Services section has all services and when click on the button go to checkout page .
 * Also have a private route when someone didn't login and click on the checkout button then route will go on log in page .
 * In the Blogs section can be seen 3 ans of the question  
 * Last of this web site also have an about section where 
+* i use Tailwind framework and tailwind-elements component for carousel, spinners . 
 
 ### `npm start`
 

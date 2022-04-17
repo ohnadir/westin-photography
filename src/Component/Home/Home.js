@@ -2,7 +2,12 @@ import React from 'react';
 import wedding from '../images/wedding.jpg';
 import corporate from '../images/corporate.jpg';
 import video from '../images/video.jpg';
-
+import model from '../images/model.jpg';
+import corporate2 from '../images/corporate-2.jpg';
+import wedding2 from '../images/wedding (2).jpg';
+import product from '../images/products.jpg';
+import product2 from '../images/products2.jpg';
+import editing from '../images/editing.jpg';
 const Home = () => {
 
   return (
@@ -40,7 +45,7 @@ const Home = () => {
                                 alt="Motorbike Smoke"/>
                             <div className="carousel-caption hidden md:block absolute text-center">
                                 <h5 className="text-2xl font-bold">Wedding Photography</h5>
-                                <p>We provide best service for Bride and Groom</p>
+                                <p>We provide best Photography service for Bride and Groom</p>
                             </div>
                         </div>
                         <div className="carousel-item relative float-left w-full">
@@ -50,7 +55,7 @@ const Home = () => {
                                 alt="Mountaintop"/>
                             <div className="carousel-caption hidden md:block absolute text-center">
                                 <h5 className="text-2xl font-bold">Corporate Banding Photography</h5>
-                                <p>our</p>
+                                <p>In This technology eve corporate branding is most important for Business </p>
                             </div>
                         </div>
                         <div className="carousel-item relative float-left w-full">
@@ -60,7 +65,7 @@ const Home = () => {
                                 alt="Woman Reading a Book"/>
                             <div className="carousel-caption hidden md:block absolute text-center">
                                 <h5 className="text-2xl font-bold">Videography</h5>
-                                <p>Some representative placeholder content for the third slide.</p>
+                                <p>Wedding, Events or others memorable programs is most important for life if you want save your memory join us</p>
                             </div>
                         </div>
                     </div>
@@ -84,34 +89,34 @@ const Home = () => {
             </div>
             <section className="overflow-hidden text-gray-700">
               <div className="container px-5 py-2 mx-auto my-20 lg:px-32">
-                <h1 className='text-center mb-8'>This is recent work</h1>
+                <h1 className='text-center mb-8 font-bold text-2xl'>Recent Clicks</h1>
                   <div className="flex flex-wrap -m-1 md:-m-2">
                     <div className="flex flex-wrap w-1/2">
                           <div className="w-1/2 p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(70).webp"/>
+                              src={model} />
                           </div>
                           <div className="w-1/2 p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(72).webp"/>
+                              src={product} />
                           </div>
                           <div className="w-full p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"/>
+                              src={corporate2} />
                           </div>
                         </div>
                         <div className="flex flex-wrap w-1/2">
                           <div className="w-full p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(74).webp"/>
+                              src={wedding2} />
                           </div>
                           <div className="w-1/2 p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(75).webp"/>
+                              src={editing}/>
                           </div>
                           <div className="w-1/2 p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"
-                              src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(77).webp"/>
+                              src={product2} />
                           </div>
                         </div>
                       </div>
