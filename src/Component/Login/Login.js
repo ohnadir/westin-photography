@@ -41,7 +41,7 @@ const Login = () => {
         alert('Update Password');
     }
     return (
-        <div className='flex justify-center items-center h-[93vh]'>
+        <div className='flex justify-center items-center h-[78.5vh]'>
             <div className='w-[500px] shadow-xl p-4'>
                 <form onSubmit={(event)=> event.preventDefault()}>
                     <h2 className='text-center mb-8'>Log in</h2>

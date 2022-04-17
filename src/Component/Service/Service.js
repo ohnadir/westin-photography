@@ -11,7 +11,7 @@ const Service = ({service}) => {
     }
     return (
         <div>
-            <div className='shadow-xl mx-auto font-sans h-[410px] relative'>
+            <div className='shadow-xl mx-auto   h-[410px] relative'>
                 <img className='p-2' src={img} alt="" />
                 <div className='pl-3'>
                     <p className='my-3'>{name}</p>
