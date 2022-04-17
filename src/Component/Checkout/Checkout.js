@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Checkout = () => {
     const [agree, setAgree] = useState(false);
@@ -13,7 +14,7 @@ const Checkout = () => {
         setEmail('');
         setAddress('');
         setNumber('');
-        alert('Thanks for Bookings')
+        toast('Thanks for Bookings')
     }
     return (
         <div className='flex justify-center items-center h-[92vh]'>
@@ -40,6 +41,7 @@ const Checkout = () => {
                         className='w-full bg-cyan-600 text-white py-[5px]' 
                     >Submit</button>
                 </form>
+                <ToastContainer/>
             </div>
         </div>
     );

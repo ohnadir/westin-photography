@@ -1,10 +1,15 @@
-# Getting Started with Create React App
+# Getting Started with WesTen Photography
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Photography](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+* A simple website for photographer. 
+* Home section contains a carousel, Some services, Recent work and footer
+* Services section has all services and when click on the button go to checkout page .
+* Also have a private route when someone didn't login and click on the checkout button then route will go on log in page .
+* In the Blogs section can be seen 3 ans of the question  
+* Last of this web site also have an about section where 
 
 ### `npm start`
 
