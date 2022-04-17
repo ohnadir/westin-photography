@@ -8,12 +8,15 @@ import wedding2 from '../images/wedding (2).jpg';
 import product from '../images/products.jpg';
 import product2 from '../images/products2.jpg';
 import editing from '../images/editing.jpg';
+import useServices from '../Hooks/useServices';
+import HomeServices from '../HomeServices/HomeServices';
 const Home = () => {
-
+  const [services] = useServices();
   return (
 
-            <div>
+            <div >
               <div>
+              {/* Carousel section */}
                 <div
                     id="carouselDarkVariant"
                     className="carousel slide carousel-fade carousel-dark relative"
@@ -86,8 +89,22 @@ const Home = () => {
                             <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-            </div>
-            <section className="overflow-hidden text-gray-700">
+              </div>
+              {/* service section */}
+              <div className='lg:max-w-7xl md:max-w-3xl sm:max-w-xl mx-auto mt-20'>
+                <h1 className='text-center font-bold text-2xl mb-8'>Best Services</h1>
+                <div  className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-8'>
+                    {
+                     services.slice(0, 4).map(service => <HomeServices
+                       key={service.id}
+                       service={service}
+                    ></HomeServices>)
+                    }
+                  </div>
+                    <div className='flex justify-center mt-8'><button className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
+              </div>
+            {/* extra section */}
+            <section className=" overflow-hidden text-gray-700">
               <div className="container px-5 py-2 mx-auto my-20 lg:px-32">
                 <h1 className='text-center mb-8 font-bold text-2xl'>Recent Clicks</h1>
                   <div className="flex flex-wrap -m-1 md:-m-2">

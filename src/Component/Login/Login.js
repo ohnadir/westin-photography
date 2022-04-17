@@ -30,9 +30,7 @@ const Login = () => {
     }
     const handleLogIn = () => {
         signInWithEmailAndPassword(email, password);
-        if (!user) {
-            alert('User not Found');
-        }
+        
     }
     const handleGoogleSingIn = () => {
         signInWithGoogle();
