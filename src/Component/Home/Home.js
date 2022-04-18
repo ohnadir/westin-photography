@@ -10,8 +10,10 @@ import product2 from '../images/products2.jpg';
 import editing from '../images/editing.jpg';
 import useServices from '../Hooks/useServices';
 import HomeServices from '../HomeServices/HomeServices';
+import { useNavigate } from 'react-router-dom';
 const Home = () => {
   const [services] = useServices();
+  const navigate = useNavigate();
   return (
 
             <div >
@@ -101,7 +103,7 @@ const Home = () => {
                     ></HomeServices>)
                     }
                   </div>
-                    <div className='flex justify-center mt-8'><button className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
+                    <div className='flex justify-center mt-8'><button onClick={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
               </div>
             {/* extra section */}
             <section className=" overflow-hidden text-gray-700">

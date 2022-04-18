@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HomeServices = ({service}) => {
-    const { name, img, Price, ratings, details } = service;
+    const { name, img, Price, ratings, details,id } = service;
+    const navigate = useNavigate();
     return (
         <div className=''>
             <div className='lg:w-[310px] md:w-[250px] sm:w-[270px] w-[250px] mx-auto gap-4 shadow-xl h-[436px] relative'>
@@ -12,7 +14,7 @@ const HomeServices = ({service}) => {
                     <p>Price:- <span className='font-semibold'>${Price}</span></p>
                     <p>Ratings:- {ratings}</p>
                 </div>
-                <button className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
+                <button onClick={()=>navigate(`/checkout/${id}`)} className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
             </div>
         </div>
     );
