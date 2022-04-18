@@ -11,6 +11,9 @@ import editing from '../images/editing.jpg';
 import useServices from '../Hooks/useServices';
 import HomeServices from '../HomeServices/HomeServices';
 import { useNavigate } from 'react-router-dom';
+
+
+
 const Home = () => {
   const [services] = useServices();
   const navigate = useNavigate();
@@ -50,7 +53,7 @@ const Home = () => {
                                 alt="Motorbike Smoke"/>
                             <div className="carousel-caption hidden md:block absolute text-center">
                                 <h5 className="text-2xl font-bold">Wedding Photography</h5>
-                                <p>We provide best Photography service for Bride and Groom</p>
+                                <p>The best photography  service for wedding and reception also special capture for bride and groom </p>
                             </div>
                         </div>
                         <div className="carousel-item relative float-left w-full">
@@ -103,12 +106,12 @@ const Home = () => {
                     ></HomeServices>)
                     }
                   </div>
-                    <div className='flex justify-center mt-8'><button onClick={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
+                    <div className='flex justify-center mt-8'><button onChange={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
               </div>
             {/* extra section */}
             <section className=" overflow-hidden text-gray-700">
               <div className="container px-5 py-2 mx-auto my-20 lg:px-32">
-                <h1 className='text-center mb-8 font-bold text-2xl'>Recent Clicks</h1>
+                <h1 className='text-center mb-8 font-bold text-2xl'>Recent Works</h1>
                   <div className="flex flex-wrap -m-1 md:-m-2">
                     <div className="flex flex-wrap w-1/2">
                           <div className="w-1/2 p-1 md:p-2">

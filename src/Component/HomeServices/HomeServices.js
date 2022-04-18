@@ -1,5 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Rating from 'react-rating';
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const HomeServices = ({service}) => {
     const { name, img, Price, ratings, details,id } = service;
@@ -12,9 +15,15 @@ const HomeServices = ({service}) => {
                     <p className='text-lg mb-2'>{name}</p>
                     <p className='mb-2'>{details}</p>
                     <p>Price:- <span className='font-semibold'>${Price}</span></p>
-                    <p>Ratings:- {ratings}</p>
+                    <p>Ratings:-
+                    <Rating className='text-sm ml-2'
+                        initialRating={ratings}
+                        emptySymbol={<FontAwesomeIcon icon={faStar} />}
+                        fullSymbol={<FontAwesomeIcon style={{color: 'goldenrod'}} icon={faStar} />}
+                        readonly>
+                    </Rating></p>
                 </div>
-                <button onClick={()=>navigate(`/checkout/${id}`)} className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
+                <button onChange={()=>navigate(`/checkout/${id}`)} className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
             </div>
         </div>
     );

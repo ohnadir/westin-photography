@@ -65,17 +65,17 @@ const Signup = () => {
                         {error && <p className='text-red-600 text-sm mt-1'>{error}</p>}
                     </div>
                     <div className='mb-2'>
-                        <input onClick={()=>setAgree(!agree)} type="checkbox" name="terms" id="" />
+                        <input onChange={()=>setAgree(!agree)} type="checkbox" name="terms" id="" />
                         <label className={agree ? 'pl-2 text-blue-500 ' : 'pl-2 text-red-500 '} htmlFor="terms">Accept our terms and Condition</label>
                     </div>
                     <button  disabled={!agree}
-                        onClick={handleSignUp}
+                        onChange={handleSignUp}
                         className='bg-cyan-600 
                         w-full text-white py-[5px] rounded'>Sign Up</button>
                     <div className='flex items-center justify-between my-8'>
                         <p>Already have an Account <Link className='text-red-600' to='/login'>login</Link></p>
                     </div>
-                    <button onClick={handleGoogleSingIn}
+                    <button onChange={handleGoogleSingIn}
                         className='
                             border border-cyan-600  w-full px-8 py-[5px]
                           text-black rounded
