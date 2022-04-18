@@ -26,7 +26,7 @@ const Service = ({service}) => {
                     </Rating>
                     </p>
                 </div>
-                <button onChange={()=>handleGoToCheckOut(id)} className=' absolute bottom-0
+                <button onClick={()=>handleGoToCheckOut(id)} className=' absolute bottom-0
                 bg-cyan-600 w-full py-[4px] hover:bg-cyan-500
                 text-white ' >Checkout</button>
             </div>

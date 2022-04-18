@@ -23,7 +23,7 @@ const HomeServices = ({service}) => {
                         readonly>
                     </Rating></p>
                 </div>
-                <button onChange={()=>navigate(`/checkout/${id}`)} className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
+                <button onClick={()=>navigate(`/checkout/${id}`)} className='bg-cyan-600 text-white w-full py-[4px] absolute bottom-0'>Checkout</button>
             </div>
         </div>
     );

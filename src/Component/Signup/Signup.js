@@ -14,11 +14,11 @@ const Signup = () => {
     const navigate = useNavigate();
     const [signInWithGoogle] = useSignInWithGoogle(auth);
     // const [sendEmailVerification, sending] = useSendEmailVerification(auth);
-    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user, error] = useCreateUserWithEmailAndPassword(auth);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
+    const [error1, setError] = useState('');
     const handleEmail = event => {
         setEmail(event.target.value);
     }
@@ -62,20 +62,21 @@ const Signup = () => {
                     </div>
                     <div className='mb-8'>
                         <input required onChange={handleConfirmPassword} className='bg-stone-200 p-[5px] w-full outline-none' type="password" name="password" placeholder='Confirm Password' id="" />
-                        {error && <p className='text-red-600 text-sm mt-1'>{error}</p>}
+                        {error1 && <p className='text-red-600 text-sm mt-1'>{error1}</p>}
                     </div>
                     <div className='mb-2'>
                         <input onChange={()=>setAgree(!agree)} type="checkbox" name="terms" id="" />
                         <label className={agree ? 'pl-2 text-blue-500 ' : 'pl-2 text-red-500 '} htmlFor="terms">Accept our terms and Condition</label>
                     </div>
                     <button  disabled={!agree}
-                        onChange={handleSignUp}
+                        onClick={handleSignUp}
                         className='bg-cyan-600 
                         w-full text-white py-[5px] rounded'>Sign Up</button>
                     <div className='flex items-center justify-between my-8'>
                         <p>Already have an Account <Link className='text-red-600' to='/login'>login</Link></p>
                     </div>
-                    <button onChange={handleGoogleSingIn}
+                    {error && <p>{error}</p>}
+                    <button onClick={handleGoogleSingIn}
                         className='
                             border border-cyan-600  w-full px-8 py-[5px]
                           text-black rounded
@@ -83,6 +84,7 @@ const Signup = () => {
                             justify-between'>
                         <FcGoogle className='text-3xl' /> Continue with Google</button>
                 </form>
+                
                 <ToastContainer/>
             </div>
         </div>

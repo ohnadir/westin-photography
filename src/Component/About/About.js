@@ -8,8 +8,7 @@ const About = () => {
                     <img className='w-[250px] ' src={phoneOfMine} alt=""/>  
                 </div>
                 <div>
-                    <p> In This technology eve  I know very well how must the a student  suffer  for want of a good doctor. Even, many villagers die premature death for want of only a good doctor. My grandmother also died a premature death for the same reason. These incidents have shocked me. So, I want to be a good doctor. After being a doctor, I will live in my village and serve the villagers.
-                    In our country, to be a doctor is not easy at all. At first, I have to pass the SSC and the HSC with good result from science group. Then to get admission in MBBS course, I have to compete with all the good students. Therefore, I am working very hard with sincerity from now. I am confident of fulfilling my aim
+                    <p> In This technology eve, I know very well how must the student build carrier. That's why I decided to be a developer and was admitted to the Programing Hero institute. Last 4 months, I hard work for archive my goal. In my Learning journey, I learn how to become an as best developer and grow a sorted carrier as a developer.  In the next few months, I will work hard to make myself perfect for the interview as a junior web developer.
                     </p>
                 </div>
             </div>

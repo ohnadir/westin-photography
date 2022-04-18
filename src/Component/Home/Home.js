@@ -106,7 +106,7 @@ const Home = () => {
                     ></HomeServices>)
                     }
                   </div>
-                    <div className='flex justify-center mt-8'><button onChange={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
+                    <div className='flex justify-center mt-8'><button onClick={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
               </div>
             {/* extra section */}
             <section className=" overflow-hidden text-gray-700">
