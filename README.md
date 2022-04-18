@@ -1,6 +1,6 @@
 # Getting Started with WesTen Photography
 
-This project was bootstrapped with [Photography](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [WesTen Photography](westin-photography.web.app).
 
 ## Available Scripts
 * Click on the web site title to see Home page 
@@ -10,7 +10,7 @@ This project was bootstrapped with [Photography](https://github.com/facebook/cre
 * Also have a private route when someone didn't login and click on the checkout button then route will go on log in page .
 * In the Blogs section can be seen 3 ans of the question  
 * Last of this web site also have an about section where 
-* i use Tailwind framework and tailwind-elements component for carousel, spinners . 
+* i use Tailwind framework and tailwind-elements component for carousel, spinners, accordion . 
 
 ### `npm start`
 
