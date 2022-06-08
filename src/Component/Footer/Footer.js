@@ -8,7 +8,7 @@ import { BsGoogle } from 'react-icons/bs';
 const Footer = () => {
     return (
         <div>
-            <footer className="text-center text-white bg-[#f1f1f1]">
+            <footer className="text-center text-white bg-[#f1f1f1] py-16">
                 <div className=" pt-9">
                     <div className="flex justify-center items-center mb-8 gap-8">
                         <FaFacebookF className='text-gray-800 cursor-pointer'/>

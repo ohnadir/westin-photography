@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='container mx-auto'>
+        <div className='max-w-7xl  px-2 mx-auto'>
             <div className='flex justify-center items-center h-[78.5vh] '>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item bg-white border border-gray-200">

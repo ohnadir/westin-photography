@@ -19,7 +19,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
 
-            <div >
+            <div className='max-w-7xl mx-auto'>
               <div>
               {/* Carousel section */}
                 <div
@@ -96,7 +96,7 @@ const Home = () => {
                 </div>
               </div>
               {/* service section */}
-              <div className='lg:max-w-7xl md:max-w-3xl sm:max-w-xl mx-auto mt-20'>
+              <div className='max-w-7xl  mx-auto mt-20'>
                 <h1 className='text-center font-bold text-2xl mb-8'>Best Services</h1>
                 <div  className=' grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:grid-cols-3 gap-8'>
                     {
@@ -109,10 +109,10 @@ const Home = () => {
                     <div className='flex justify-center mt-8'><button onClick={()=>navigate('/services')} className='bg-[orange] w-[200px] rounded py-[4px] text-white'>Explore Services</button></div>
               </div>
             {/* extra section */}
-            <section className=" overflow-hidden text-gray-700">
-              <div className="container px-5 py-2 mx-auto my-20 lg:px-32">
+            <section className=" overflow-hidden ">
+              <div className="max-w-7xl mx-auto px-5 py-2 my-20 lg:px-32">
                 <h1 className='text-center mb-8 font-bold text-2xl'>Recent Works</h1>
-                  <div className="flex flex-wrap -m-1 md:-m-2">
+                  <div className="flex flex-wrap max-w-7xl mx-auto ">
                     <div className="flex flex-wrap w-1/2">
                           <div className="w-1/2 p-1 md:p-2">
                             <img alt="gallery" className="block object-cover object-center w-full h-full rounded-lg"

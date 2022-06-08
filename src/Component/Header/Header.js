@@ -12,19 +12,26 @@ function Header() {
     const [user] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
+  }
+  
+  const menuList = <>
+    <CustomLink to='/services'>Services</CustomLink>
+    <CustomLink to='/checkout'>Checkout</CustomLink>
+    <CustomLink to='/blogs'>Blogs</CustomLink>
+    <CustomLink to='/about'>About</CustomLink>
+    {
+      user ? <button onClick={handleSignOut}>Sign Out</button>
+      :
+      <CustomLink to='/login'>Login</CustomLink>
     }
+  </>
+  
   return (
-    <div className="flex items-center h-14 px-6 justify-between  bg-slate-600 text-white relative z-50">
+    <div className="bg-slate-600">
+      <div className="flex items-center h-14 px-2 max-w-7xl mx-auto justify-between   text-white relative z-50">
       <div className="h-7"><Link to='/home'>WesTen Photography</Link></div>
       <div className="flex gap-4 ml-10 items-center hidden md:flex">
-            <CustomLink to='/services'>Services</CustomLink>
-            <CustomLink to='/checkout'>Checkout</CustomLink>
-            <CustomLink to='/blogs'>Blogs</CustomLink>
-            <CustomLink to='/about'>About</CustomLink>
-            {user ? <button onClick={handleSignOut}>Sign Out</button>
-                :
-                <CustomLink to='/login'>Login</CustomLink>
-            }
+            {menuList}
       </div>
       <FontAwesomeIcon
         icon={open ? faTimes : faBars}
@@ -34,17 +41,11 @@ function Header() {
       {open && (
         <div className="bg-slate-600 absolute top-full left-0 flex flex-col w-full pb-8 md:hidden">
             <div className=" flex gap-4 flex-col items-center text-xl">
-                <CustomLink to='/services'>Service</CustomLink>
-                <CustomLink to='/checkout'>Checkout</CustomLink>
-                <CustomLink to='/blogs'>Blogs</CustomLink>
-                <CustomLink to='/about'>About</CustomLink>
-                {user ? <button onClick={handleSignOut}>Sign Out</button>
-                    :
-                    <CustomLink to='/login'>Login</CustomLink>
-                }
+               {menuList}
             </div>
         </div>
       )}
+    </div>
     </div>
   )
 }
